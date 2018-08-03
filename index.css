@@ -1,0 +1,11 @@
+.canvas-wrap {
+    width: 640px;
+    height: 480px;
+    box-sizing: content-box;
+    border: 1px solid green;
+    margin: 20px auto;
+}
+.canvas-wrap canvas {
+    width: 100%;
+    height: 100%;
+}
