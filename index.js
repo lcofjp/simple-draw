@@ -22,6 +22,13 @@ function test() {
     paper.view.onMouseDrag = function(event) {
         console.log('onDrag: ', event);
     }
+
+    var path = new paper.Path.Rectangle([75, 75], [100, 100]);
+    path.strokeColor = 'black';
+    
+    paper.view.onFrame = function(event) {
+        path.rotate(1);
+    }
 }
 
 test();
