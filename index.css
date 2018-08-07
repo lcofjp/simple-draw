@@ -2,10 +2,22 @@
     width: 640px;
     height: 480px;
     box-sizing: content-box;
-    border: 1px solid green;
+    border: 1px solid #e0e0e0;
     margin: 20px auto;
 }
 .canvas-wrap canvas {
     width: 100%;
     height: 100%;
+}
+
+.draw-tools {
+    float: left;
+    width: 200px;
+}
+.draw-tools > div {
+    border: 1px solid #f0f0f0;
+    margin: 20px 0;
+}
+.draw-tools label {
+    display: block;
 }

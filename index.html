@@ -2,13 +2,37 @@
 <html>
     <head>
         <title>paper test</title>
-        <script src="node_modules/paper/dist/paper-full.js"></script>
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="node_modules/paper/dist/paper-full.min.js"></script>
         <link rel="stylesheet" href="./index.css">
     </head>
     <body>
+        <div class="draw-tools">
+            <div class="draw-shap">
+                <label><input type="radio" name="shape-type" value="line" checked>线</label>
+                <label><input type="radio" name="shape-type" value="arrow">带箭头的线</label>
+                <label><input type="radio" name="shape-type" value="rect">矩形</label>
+                <label><input type="radio" name="shape-type" value="circle">圆形</label>
+            </div>
+            <div class="draw-color">
+                <label><input type="radio" name="pen-color" value="red" checked>红色</label>
+                <label><input type="radio" name="pen-color" value="green">绿色</label>
+                <label><input type="radio" name="pen-color" value="blue">蓝色</label>
+                <label><input type="radio" name="pen-color" value="yellow">黄色</label>
+                <label><input type="radio" name="pen-color" value="black">黑色</label>
+                <label><input type="radio" name="pen-color" value="white">白色</label>
+            </div>
+            <div class="other">
+                <label><input type="checkbox" name="opacity">半透明</label>
+                <label><input type="radio" name="pen-width" value="1">细</label>
+                <label><input type="radio" name="pen-width" value="2" checked>中</label>
+                <label><input type="radio" name="pen-width" value="3">粗</label>
+            </div>
+        </div>
         <div class="canvas-wrap">
             <canvas width="640" height="480" id="canvas"></canvas>
         </div>
+        <script src="./drawing-shape.js"></script>
         <script src="./index.js"></script>
     </body>
 </html>
