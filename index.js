@@ -57,3 +57,11 @@ function makeShape(event, drawingConfig) {
         throw new Error('unsupported shape: ' + shape);
     }
 }
+
+function generateSVG() {
+    var svgStr = paper.project.exportSVG({asString: true});
+    var bStr = Base64.encode(svgStr);
+    $('#svg-output img').attr('src', 'data:image/svg+xml;base64,' + bStr);
+}
+
+$('#generate-svg').on('click', generateSVG);

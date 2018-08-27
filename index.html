@@ -4,6 +4,7 @@
         <title>paper test</title>
         <script src="./vender/jquery.min.js"></script>
         <script src="./vender/paper-full.min.js"></script>
+        <script src="./vender/base64.js"></script>
         <link rel="stylesheet" href="./index.css">
     </head>
     <body>
@@ -28,9 +29,13 @@
                 <label><input type="radio" name="pen-width" value="2" checked>中</label>
                 <label><input type="radio" name="pen-width" value="3">粗</label>
             </div>
+            <button id="generate-svg">生成svg</button>
         </div>
         <div class="canvas-wrap">
             <canvas width="640" height="480" id="canvas"></canvas>
+        </div>
+        <div id="svg-output">
+            <img src="">
         </div>
         <script src="./drawing-shape.js"></script>
         <script src="./index.js"></script>
