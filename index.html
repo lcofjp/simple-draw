@@ -16,12 +16,12 @@
                 <label><input type="radio" name="shape-type" value="circle">圆形</label>
             </div>
             <div class="draw-color">
-                <label><input type="radio" name="pen-color" value="red" checked>红色</label>
-                <label><input type="radio" name="pen-color" value="green">绿色</label>
-                <label><input type="radio" name="pen-color" value="blue">蓝色</label>
-                <label><input type="radio" name="pen-color" value="yellow">黄色</label>
-                <label><input type="radio" name="pen-color" value="black">黑色</label>
-                <label><input type="radio" name="pen-color" value="white">白色</label>
+                <label data-color="#ff0000"><input type="radio" name="pen-color" value="red" checked>红色</label>
+                <label data-color="#008800"><input type="radio" name="pen-color" value="green">绿色</label>
+                <label data-color="#0000ff"><input type="radio" name="pen-color" value="blue">蓝色</label>
+                <label data-color="yellow"><input type="radio" name="pen-color" value="yellow">黄色</label>
+                <label data-color="black"><input type="radio" name="pen-color" value="black">黑色</label>
+                <label data-color="white"><input type="radio" name="pen-color" value="white">白色</label>
             </div>
             <div class="other">
                 <label><input type="checkbox" name="opacity">半透明</label>
@@ -31,7 +31,7 @@
             </div>
             <button id="generate-svg">生成svg</button>
         </div>
-        <div class="canvas-wrap">
+        <div class="canvas-wrap" id="canvas-wrap">
             <canvas width="640" height="480" id="canvas"></canvas>
         </div>
         <div id="svg-output">

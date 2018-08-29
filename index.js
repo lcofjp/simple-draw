@@ -65,3 +65,11 @@ function generateSVG() {
 }
 
 $('#generate-svg').on('click', generateSVG);
+
+$(window).on('resize', function(e) {
+    var cWrap = $('#canvas-wrap');
+    var canvas = $('#canvas');
+    var w = cWrap.width();
+    var h = cWrap.height();
+    canvas.attr('width', w).attr('height', h);
+})

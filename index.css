@@ -1,9 +1,12 @@
 .canvas-wrap {
-    width: 640px;
-    height: 480px;
+    width: 100%;
+    height: 75vw;
+    max-width: 640px;
+    max-height: 480px;
     box-sizing: content-box;
     border: 1px solid #e0e0e0;
     margin: 20px auto;
+    overflow: hidden;
 }
 .canvas-wrap canvas {
     width: 100%;
@@ -11,7 +14,8 @@
 }
 
 .draw-tools {
-    float: left;
+    position: fixed;
+    left: 0; top: 0;
     width: 7em;
 }
 .draw-tools > div {
@@ -20,6 +24,18 @@
 }
 .draw-tools label {
     display: block;
+}
+
+.draw-color label input {
+    display: none;
+}
+.draw-color label:before {
+    content: " ";
+    display: block;
+    width: 1em;
+    height: 1em;
+    background-color: attr(data-color color, red);
+    background-color: red;
 }
 
 #svg-output {
