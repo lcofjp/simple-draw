@@ -1,6 +1,9 @@
 <!doctype html>
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>paper test</title>
         <script src="./vender/jquery.min.js"></script>
         <script src="./vender/paper-full.min.js"></script>
@@ -8,31 +11,35 @@
         <link rel="stylesheet" href="./index.css">
     </head>
     <body>
-        <div class="draw-tools">
-            <div class="draw-shap">
-                <label><input type="radio" name="shape-type" value="line" checked>线</label>
-                <label><input type="radio" name="shape-type" value="arrow">带箭头的线</label>
-                <label><input type="radio" name="shape-type" value="rect">矩形</label>
-                <label><input type="radio" name="shape-type" value="circle">圆形</label>
+        <div class="draw-box">
+            <div class="draw-tools">
+                <div class="draw-shape">
+                    <input id="shape-curve" type="radio" name="shape-type" value="curve" checked><label for="shape-curve"><span>曲线</span></label>
+                    <input id="shape-line" type="radio" name="shape-type" value="line"><label for="shape-line"><span>线</span></label>
+                    <input id="shape-arrow" type="radio" name="shape-type" value="arrow"><label for="shape-arrow"><span>箭头线</span></label>
+                    <input id="shape-rect" type="radio" name="shape-type" value="rect"><label for="shape-rect"><span>矩形</span></label>
+
+                </div>
+                <div class="draw-color">
+                    <input id="color-red" type="radio" name="pen-color" value="red" checked><label for="color-red" data-color="red"><span></span></label>
+                    <input id="color-green" type="radio" name="pen-color" value="green"><label for="color-green" data-color="green"><span></span></label>
+                    <input id="color-blue" type="radio" name="pen-color" value="blue"><label for="color-blue" data-color="blue"><span></span></label>
+                    <input id="color-cyan" type="radio" name="pen-color" value="#0b7285"><label for="color-cyan" data-color="cyan"><span></span></label>
+                    <input id="color-grape" type="radio" name="pen-color" value="#862e9c"><label for="color-grape" data-color="grape"><span></span></label>
+                    <input id="color-indigo" type="radio" name="pen-color" value="#364fc7"><label for="color-indigo" data-color="indigo"><span></span></label>
+                    <input id="color-orange" type="radio" name="pen-color" value="#d9480f"><label for="color-orange" data-color="orange"><span></span></label>
+                </div>
+                <div class="other">
+                    <label><input type="checkbox" name="opacity">半透明</label>
+                    <label><input type="radio" name="pen-width" value="1">细</label>
+                    <label><input type="radio" name="pen-width" value="2" checked>中</label>
+                    <label><input type="radio" name="pen-width" value="3">粗</label>
+                </div>
+                <button id="generate-svg">生成svg</button>
             </div>
-            <div class="draw-color">
-                <label data-color="#ff0000"><input type="radio" name="pen-color" value="red" checked>红色</label>
-                <label data-color="#008800"><input type="radio" name="pen-color" value="green">绿色</label>
-                <label data-color="#0000ff"><input type="radio" name="pen-color" value="blue">蓝色</label>
-                <label data-color="yellow"><input type="radio" name="pen-color" value="yellow">黄色</label>
-                <label data-color="black"><input type="radio" name="pen-color" value="black">黑色</label>
-                <label data-color="white"><input type="radio" name="pen-color" value="white">白色</label>
+            <div class="canvas-wrap" id="canvas-wrap">
+                <canvas width="640" height="480" id="canvas"></canvas>
             </div>
-            <div class="other">
-                <label><input type="checkbox" name="opacity">半透明</label>
-                <label><input type="radio" name="pen-width" value="1">细</label>
-                <label><input type="radio" name="pen-width" value="2" checked>中</label>
-                <label><input type="radio" name="pen-width" value="3">粗</label>
-            </div>
-            <button id="generate-svg">生成svg</button>
-        </div>
-        <div class="canvas-wrap" id="canvas-wrap">
-            <canvas width="640" height="480" id="canvas"></canvas>
         </div>
         <div id="svg-output">
             <img src="">
