@@ -1,3 +1,13 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 .draw-box .draw-tools .draw-shape input {
   display: none;
 }
@@ -97,15 +107,48 @@
   background: #d9480f;
 }
 
+.draw-box .draw-tools .other input {
+  display: none;
+}
+
+.draw-box .draw-tools .other label {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background: center/100% white no-repeat;
+}
+
+.draw-box .draw-tools .other #weight-thin + label {
+  background-image: url("./img/thin.png");
+}
+
+.draw-box .draw-tools .other #weight-thin:checked + label {
+  background-image: url("./img/thin-active.png");
+}
+
+.draw-box .draw-tools .other #weight-normal + label {
+  background-image: url("./img/normal.png");
+}
+
+.draw-box .draw-tools .other #weight-normal:checked + label {
+  background-image: url("./img/normal-active.png");
+}
+
+.draw-box .draw-tools .other #weight-thick + label {
+  background-image: url("./img/thick.png");
+}
+
+.draw-box .draw-tools .other #weight-thick:checked + label {
+  background-image: url("./img/thick-active.png");
+}
+
 .draw-box .canvas-wrap {
-  width: 100%;
   height: 75vw;
   max-width: 640px;
   max-height: 480px;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
   border: 1px solid #e0e0e0;
-  margin: 20px auto;
   overflow: hidden;
 }
 

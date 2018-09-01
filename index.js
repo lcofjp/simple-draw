@@ -1,7 +1,7 @@
 var drawConfig = {
-    shape: 'line',
+    shape: 'curve',
     arrow: false,
-    strokeWidth: 1,
+    strokeWidth: 2,
     strokeColor: 'red'
 }
 
@@ -47,8 +47,10 @@ paper.view.onMouseUp = function(event) {
 
 function makeShape(event, drawingConfig) {
     var shape = drawingConfig.shape;
-    if (shape === 'rect') {
-        return new DrawingRect(event, drawConfig)
+    if (shape === 'curve') {
+        return new DrawingCurve(event, drawConfig);
+    } else if (shape === 'rect') {
+        return new DrawingRect(event, drawConfig);
     } else if (shape === 'circle') {
         return new DrawingCircle(event, drawingConfig);
     } else if (shape === 'line') {

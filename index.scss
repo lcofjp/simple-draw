@@ -1,3 +1,10 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+}
 .draw-box {
   .draw-tools {
     .draw-shape {
@@ -80,15 +87,44 @@
         background: #d9480f;
       }
     }
+    .other {
+      input {
+        display: none;
+      }
+      label {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        background: center/100% white no-repeat;
+      }
+      #weight-thin + label {
+        background-image: url("./img/thin.png");
+      }
+      #weight-thin:checked + label {
+        background-image: url("./img/thin-active.png");
+      }
+      #weight-normal + label {
+        background-image: url("./img/normal.png");
+      }
+      #weight-normal:checked + label {
+        background-image: url("./img/normal-active.png");
+      }
+      #weight-thick + label {
+        background-image: url("./img/thick.png");
+      }
+      #weight-thick:checked + label {
+        background-image: url("./img/thick-active.png");
+      }
+    }
   }
   .canvas-wrap {
-    width: 100%;
+    // width: 100%;
     height: 75vw;
     max-width: 640px;
     max-height: 480px;
     box-sizing: content-box;
     border: 1px solid #e0e0e0;
-    margin: 20px auto;
+    // margin: 20px auto;
     overflow: hidden;
     canvas {
       width: 100%;

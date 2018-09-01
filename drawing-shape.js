@@ -59,3 +59,21 @@ DrawingLine.prototype.drawingDragTo = function(event) {
 DrawingLine.prototype.drawingEnd = function(event) {
     this._shape.simplify();
 }
+
+// ----------------drawingCurve------------------------
+function DrawingCurve(event, drawConfig) {
+    this._startPoint = event.point;
+    this._drawConfig = drawConfig;
+    this._shape = new paper.Path(event.point);
+    this.setDrawConfig();
+}
+
+DrawingCurve.prototype.setDrawConfig = setDrawConfig;
+
+DrawingCurve.prototype.drawingDragTo = function(event) {
+    this._shape.add(event.point);
+    this._shape.smooth();
+}
+DrawingCurve.prototype.drawingEnd = function(event) {
+    this._shape.simplify();
+}
