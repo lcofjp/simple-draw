@@ -6,6 +6,8 @@ html, body {
   box-sizing: border-box;
 }
 .draw-box {
+  max-width: 640px;
+  margin: 0 auto;
   .draw-tools {
     .draw-shape {
       input {
@@ -46,10 +48,22 @@ html, body {
       }
     }
     .draw-color {
-      input {
+      input[name=custom-color] {
+        width: 32px;
+        height: 32px;
+        vertical-align: top;
+        &.active {
+          border: 1px solid #4c6ef5;
+        }
+      }
+      label[for=color-custom] {
+        line-height:32px;
+        vertical-align: top;
+      }
+      input[type=radio] {
         display: none;
       }
-      label {
+      input[type=radio] + label {
         display: inline-block;
         box-sizing: content-box;
         padding: 4px;

@@ -8,6 +8,11 @@ html, body {
           box-sizing: border-box;
 }
 
+.draw-box {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
 .draw-box .draw-tools .draw-shape input {
   display: none;
 }
@@ -55,11 +60,26 @@ html, body {
   background-image: url("./img/rect-active.png");
 }
 
-.draw-box .draw-tools .draw-color input {
+.draw-box .draw-tools .draw-color input[name=custom-color] {
+  width: 32px;
+  height: 32px;
+  vertical-align: top;
+}
+
+.draw-box .draw-tools .draw-color input[name=custom-color].active {
+  border: 1px solid #4c6ef5;
+}
+
+.draw-box .draw-tools .draw-color label[for=color-custom] {
+  line-height: 32px;
+  vertical-align: top;
+}
+
+.draw-box .draw-tools .draw-color input[type=radio] {
   display: none;
 }
 
-.draw-box .draw-tools .draw-color label {
+.draw-box .draw-tools .draw-color input[type=radio] + label {
   display: inline-block;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
@@ -68,7 +88,7 @@ html, body {
   background: #f0f0f0;
 }
 
-.draw-box .draw-tools .draw-color label span {
+.draw-box .draw-tools .draw-color input[type=radio] + label span {
   display: block;
   width: 20px;
   height: 20px;

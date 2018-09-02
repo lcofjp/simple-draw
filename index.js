@@ -10,7 +10,7 @@ function handlerInit() {
         var i = $(this);
         console.log(i.attr('name'), i.attr('value'))
         var name = i.attr('name');
-        var value = i.attr('value');
+        var value = i.attr('value') || i.val();
         switch(name) {
             case 'shape-type':
                 drawConfig.shape = value;
@@ -21,6 +21,12 @@ function handlerInit() {
                 break;
             case 'pen-color':
                 drawConfig.strokeColor = value;
+                $('input[name=custom-color]').removeClass('active');
+                break;
+            case 'custom-color':
+                drawConfig.strokeColor = i.val();
+                $('input[name=pen-color]').prop('checked', false);
+                i.addClass('active');
                 break;
             case 'pen-width':
                 drawConfig.strokeWidth = parseInt(value, 10);
