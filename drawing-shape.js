@@ -52,28 +52,34 @@ function DrawingLine(event, drawConfig) {
 
 DrawingLine.prototype.setDrawConfig = setDrawConfig;
 
+DrawingLine.prototype.drawingEnd = 
 DrawingLine.prototype.drawingDragTo = function(event) {
     this._shape.add(event.point);
-    this._shape.smooth();
+    this._shape.remove();
+    this._shape = new paper.Path.Line(this._startPoint, event.point);
+    this.setDrawConfig();
 }
-DrawingLine.prototype.drawingEnd = function(event) {
-    this._shape.simplify();
-}
+// DrawingLine.prototype.drawingEnd = function(event) {
+//     this._shape.add(event.point);
+//     this._shape.remove();
+//     this._shape = new paper.Path.Line(this._startPoint, event.point);
+//     this.setDrawConfig();
+// }
 
-// ----------------drawingCurve------------------------
-function DrawingCurve(event, drawConfig) {
+// ----------------drawingPath------------------------
+function DrawingPath(event, drawConfig) {
     this._startPoint = event.point;
     this._drawConfig = drawConfig;
     this._shape = new paper.Path(event.point);
     this.setDrawConfig();
 }
 
-DrawingCurve.prototype.setDrawConfig = setDrawConfig;
+DrawingPath.prototype.setDrawConfig = setDrawConfig;
 
-DrawingCurve.prototype.drawingDragTo = function(event) {
+DrawingPath.prototype.drawingDragTo = function(event) {
     this._shape.add(event.point);
     this._shape.smooth();
 }
-DrawingCurve.prototype.drawingEnd = function(event) {
+DrawingPath.prototype.drawingEnd = function(event) {
     this._shape.simplify();
 }

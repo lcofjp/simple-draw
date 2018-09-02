@@ -22,10 +22,10 @@ html, body {
           display: none;
         }
       }
-      input#shape-curve + label {
+      input#shape-path + label {
         background-image: url("./img/curve.png");
       }
-      input#shape-curve:checked + label {
+      input#shape-path:checked + label {
         background-image: url("./img/curve-active.png");
       }
       input#shape-line + label {

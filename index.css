@@ -28,11 +28,11 @@ html, body {
   display: none;
 }
 
-.draw-box .draw-tools .draw-shape input#shape-curve + label {
+.draw-box .draw-tools .draw-shape input#shape-path + label {
   background-image: url("./img/curve.png");
 }
 
-.draw-box .draw-tools .draw-shape input#shape-curve:checked + label {
+.draw-box .draw-tools .draw-shape input#shape-path:checked + label {
   background-image: url("./img/curve-active.png");
 }
 
