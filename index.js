@@ -73,6 +73,9 @@ function generateSVG() {
 }
 
 $('#generate-svg').on('click', generateSVG);
+$('#clear-all').on('click', function(){
+    paper.project.clear();
+})
 
 $(window).on('resize', function(e) {
     var cWrap = $('#canvas-wrap');
