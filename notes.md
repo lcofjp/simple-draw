@@ -61,3 +61,14 @@ project: paper.Project(element)
 
 - `hitTest(point[, options])`: 测试某点是否位于某元素上。
 - `hitTestAll(point[, options])`: 
+- `getItems(options)`: 选取特定的item
+- `getItem(options)`:
+
+### 导入/导出SVG或者JSON
+
+- `exportJSON([options])`:
+- `importJSON(json)`:
+- `exportSVG([options])`:
+- `importSVG(svg[, options])`:
+- `importSVG(svg, onLoad)`:
+
